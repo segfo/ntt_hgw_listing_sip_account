@@ -1,0 +1,17 @@
+[package]
+name = "get_sip_account"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ipconfig = "0.2.2"
+surf = "2.3.1"
+tokio = { version = "1.28.0", features = ["full"] }
+[profile.release]
+# strip = true
+opt-level = "z"  # Optimize for size.
+lto = true
+codegen-units = 1
+panic = "abort"
